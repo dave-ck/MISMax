@@ -56,17 +56,21 @@ def good_under_perm(G, word):
     return good_under_perm_(M, word, start_status_array, n)
 
 
-# @njit(parallel=True)
 @jit(nopython=True)
 def good_under_perm_(M, word, start_status_array, n):
     good_with_start = np.zeros(BATCH_SIZE, dtype=np.uint8)
-    for i in range(0, 2 ** n, BATCH_SIZE):
-        THIS_BATCH = np.arange(i, i + BATCH_SIZE)
-        for j in prange(BATCH_SIZE):
-            k = THIS_BATCH[j]
-            good_with_start[j] = perm_fixes_from_start(M, word, start_status=start_status_array[k])
-        if np.any(good_with_start == 0):
-            return False
+    for i in range(0, 2 ** n):
+        start_status = start_status_array[i]
+        # do one "round" of updates on the vertex status
+        for vertex in word:
+            start_status[vertex] = 0
+            start_status[vertex] = int(not np.any(np.logical_and(M[vertex], start_status)))
+        # now check that the status vector is not updated on the second pass; if it is, then reject
+        for vertex in word:
+            # only issues which can arise are when the vertex and its neighbors are all zero
+            # - needn't set vertex to zero before eval
+            if (start_status[vertex] == 0) and (not np.any(np.logical_and(M[vertex], start_status))):
+                return False
     return True
 
 

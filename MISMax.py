@@ -105,35 +105,44 @@ def lex_less(x, y):
 
 def main():
     start = time()
-    #
-    # n = 7
-    # Cn = nx.cycle_graph(n)
-    # pos = nx.circular_layout(Cn)
-    # pos[n] = (0, 0)
-    # for bitstring in numpy_bitstrings(n):
-    #     if not is_min_under_cyclic_shifts(bitstring):
-    #         print("Skipping graph-generating bitstring", bitstring, "; is_min_under_cyclic_shifts==False")
-    #         continue
-    #     G = Cn.copy()
-    #     G.add_node(n)
-    #     # decide depending on bitstring whether it is adjacent to each other node
-    #     for i in range(n):
-    #         if bitstring[i]:
-    #             G.add_edge(i, n)
-    #     G_good, witness = is_good(G)
-    #
-    #     if G_good:
-    #         plt.title("With bitstring %s G was good with witness %s" % (bitstring, witness))
-    #         folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/good/"
-    #     else:
-    #         plt.title("With bitstring %s G was bad" % bitstring)
-    #         folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/bad/"
-    #
-    #     nx.draw(G, pos=pos, with_labels=True)
-    #
-    #     plt.savefig(folder + "Augmented_C%d_With_Bitstring_%s.png" % (n, bitstring))
-    #     plt.show()
 
+    n = 7
+    for n in range(3,100,2):
+        print("Computing augmented cycles with n=",n)
+        Cn = nx.cycle_graph(n)
+        pos = nx.circular_layout(Cn)
+        pos[n] = (0, 0)
+        for bitstring in numpy_bitstrings(n):
+            if 1 not in bitstring:
+                continue
+            if not is_min_under_cyclic_shifts(bitstring):
+                print("Skipping graph-generating bitstring", bitstring, "; is_min_under_cyclic_shifts==False")
+                continue
+            G = Cn.copy()
+            G.add_node(n)
+            # decide depending on bitstring whether it is adjacent to each other node
+            for i in range(n):
+                if bitstring[i]:
+                    G.add_edge(i, n)
+            G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
+
+            if G_good:
+                plt.title("With bitstring %s G was good\n with witness %s" % (bitstring, witness))
+                folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/good/"
+            else:
+                plt.title("With bitstring %s G was bad" % bitstring)
+                folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/bad/"
+
+            nx.draw(G, pos=pos, with_labels=True)
+
+            plt.savefig(folder + "Augmented_C%d_With_Bitstring_%s.png" % (n, bitstring))
+            plt.show()
+        print("Finished with n=", n)
+        print("Run so far took: %5f seconds" % (time() - start))
+
+
+def runtime_test():
+    start = time()
     for G in nx.graph_atlas_g()[350:360]:
         G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
         if G_good:

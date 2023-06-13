@@ -39,26 +39,19 @@ def permutations(n):
     return a
 
 
-def is_good(G):
-    n = len(G.nodes)
+def is_good_adj_matrix(M):
+    n = len(M)
     # here sequential processing is better - if lucky we get a boost because something
     # is accepted with an "early" word e.g. (0, 1, 3, 4, 5, 6, 2)
+    start_status_array = numpy_bitstrings(n)
     for word in permutations(n):
-        if good_under_perm(G, word):
+        if good_under_perm_(M, word, start_status_array.copy(), n):
             return True, word
     return False, None
 
 
-def good_under_perm(G, word):
-    n = len(G.nodes)
-    M = nx.to_numpy_array(G, dtype=np.uint8)
-    start_status_array = numpy_bitstrings(n)
-    return good_under_perm_(M, word, start_status_array, n)
-
-
 @jit(nopython=True)
 def good_under_perm_(M, word, start_status_array, n):
-    good_with_start = np.zeros(BATCH_SIZE, dtype=np.uint8)
     for i in range(0, 2 ** n):
         start_status = start_status_array[i]
         # do one "round" of updates on the vertex status
@@ -142,7 +135,7 @@ def main():
     #     plt.show()
 
     for G in nx.graph_atlas_g()[350:360]:
-        G_good, witness = is_good(G)
+        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
         if G_good:
             print("Good:", G, "with witness:", witness)
         else:

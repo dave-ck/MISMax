@@ -105,8 +105,6 @@ def lex_less(x, y):
 
 def main():
     start = time()
-
-    n = 7
     for n in range(3,100,2):
         print("Computing augmented cycles with n=",n)
         Cn = nx.cycle_graph(n)

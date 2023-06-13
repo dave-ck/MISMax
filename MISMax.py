@@ -7,8 +7,6 @@ import numba
 from matplotlib import pyplot as plt
 from numba import jit, njit, prange
 
-BATCH_SIZE = 32  # must be a power of 2
-
 
 def my_graph():
     G = nx.cycle_graph(5)
@@ -105,8 +103,8 @@ def lex_less(x, y):
 
 def main():
     start = time()
-    for n in range(3,100,2):
-        print("Computing augmented cycles with n=",n)
+    for n in range(3, 100, 2):
+        print("Computing augmented cycles with n=", n)
         Cn = nx.cycle_graph(n)
         pos = nx.circular_layout(Cn)
         pos[n] = (0, 0)
@@ -137,18 +135,6 @@ def main():
             plt.show()
         print("Finished with n=", n)
         print("Run so far took: %5f seconds" % (time() - start))
-
-
-def runtime_test():
-    start = time()
-    for G in nx.graph_atlas_g()[350:360]:
-        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
-        if G_good:
-            print("Good:", G, "with witness:", witness)
-        else:
-            print("Baad:", G, "with witness:", witness, "<-- should be None, for G353 *****")
-
-    print("Run took: %5f seconds" % (time() - start))
 
 
 main()

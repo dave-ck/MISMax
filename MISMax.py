@@ -1,17 +1,8 @@
-import itertools
-
 from time import time
 import networkx as nx
 import numpy as np
-import numba
 from matplotlib import pyplot as plt
-from numba import jit, njit, prange
-
-
-def my_graph():
-    G = nx.cycle_graph(5)
-    # could pass any networkx graph; here C5 for testing purposes
-    return G
+from numba import jit
 
 
 def numpy_bitstrings(n):
@@ -103,7 +94,7 @@ def lex_less(x, y):
 
 def main():
     start = time()
-    for n in range(3, 100, 2):
+    for n in range(11, 100, 2):
         print("Computing augmented cycles with n=", n)
         Cn = nx.cycle_graph(n)
         pos = nx.circular_layout(Cn)
@@ -114,6 +105,8 @@ def main():
             if not is_min_under_cyclic_shifts(bitstring):
                 print("Skipping graph-generating bitstring", bitstring, "; is_min_under_cyclic_shifts==False")
                 continue
+            print("Time:", time())
+            print("Processing bitstring", bitstring)
             G = Cn.copy()
             G.add_node(n)
             # decide depending on bitstring whether it is adjacent to each other node
@@ -133,8 +126,9 @@ def main():
 
             plt.savefig(folder + "Augmented_C%d_With_Bitstring_%s.png" % (n, bitstring))
             plt.show()
-        print("Finished with n=", n)
-        print("Run so far took: %5f seconds" % (time() - start))
 
+            print("Run so far took: %5f seconds" % (time() - start))
+            print("Finished with bitstring:", bitstring)
+        print("Finished with n=", n)
 
 main()

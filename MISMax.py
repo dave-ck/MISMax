@@ -99,7 +99,7 @@ def main():
         Cn = nx.cycle_graph(n)
         pos = nx.circular_layout(Cn)
         pos[n] = (0, 0)
-        for bitstring in numpy_bitstrings(n):
+        for bitstring in numpy_bitstrings(n)[31:]:  # pick back up at #31 - bitstring [0 0 0 0 0 0 1 1 1 1 1]
             if 1 not in bitstring:
                 continue
             if not is_min_under_cyclic_shifts(bitstring):
@@ -130,5 +130,6 @@ def main():
             print("Run so far took: %5f seconds" % (time() - start))
             print("Finished with bitstring:", bitstring)
         print("Finished with n=", n)
+
 
 main()

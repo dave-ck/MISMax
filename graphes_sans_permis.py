@@ -34,11 +34,10 @@ def permutations(n):
     return a
 
 
-def is_good_adj_matrix(M):
+def is_good_adj_matrix(M, start_status_array):
     n = len(M)
     # here sequential processing is better - if lucky we get a boost because something
     # is accepted with an "early" word e.g. (0, 1, 3, 4, 5, 6, 2)
-    start_status_array = numpy_bitstrings(n)
     for word in permutations(n):
         if good_under_perm_(M, word, start_status_array.copy(), n):
             return True, word
@@ -80,7 +79,7 @@ def perm_fixes_from_start(M, word, start_status):
 # exhaustively searches all graphs in the graph atlas - only C_7 does not admit a permis
 def exhaust_nx_smallgraphs():
     for G in nx.graph_atlas_g():
-        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
+        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G), numpy_bitstrings(G.number_of_nodes()))
         if G_good:
             print("Graph", G, "has permis", witness)
         else:
@@ -89,29 +88,36 @@ def exhaust_nx_smallgraphs():
             plt.show()
 
 
-def exhaust_n_vertex_connected_graphs(n):
+# writing good graphs is very expensive; plotting graphs is resource-intensive, but also useful to infer information
+def exhaust_n_vertex_connected_graphs(n, plot=True, write_g6=False):
     i = 0
     Gs = connected_graphs_on(n)
-    print("Graphs on %d vertices loaded from .graph6 file. Computing..." %n )
+    print("Graphs on %d vertices loaded from .graph6 file. Computing..." % n)
+    start_status_array = numpy_bitstrings(n)
     for G in Gs:
-        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G))
-        if G_good:
-            print("G %d was good with witness %s" % (i, witness))
-            pass
-        else:
-            plt.title("G was bad")
-            print("G was bad")
+        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G), start_status_array)
+        if not G_good:
             folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/bad_%d/" % n
-            nx.draw(G, with_labels=True)
-            plt.savefig(folder + "%d_vertex_graph_%d.png" % (n, i))
-            plt.show()
+            if plot:
+                plt.title("G was bad")
+                print("G was bad")
+                nx.draw(G, with_labels=True)
+                plt.savefig(folder + "%d_vertex_graph_%d.png" % (n, i))
+                plt.show()
+            if write_g6:
+                nx.write_graph6(G, folder + "%d_%d.g6" % (n, i))
         i += 1
 
 
-start = time()
-exhaust_n_vertex_connected_graphs(7)
-print("Finished batch 7 in", time() - start, "seconds")
-exhaust_n_vertex_connected_graphs(8)
-print("Finished batch 8 in", time() - start, "seconds")
-exhaust_n_vertex_connected_graphs(9)
-print("Finished batch 9 in", time() - start, "seconds")
+times = []
+# get numba to compile stuff
+exhaust_n_vertex_connected_graphs(7, plot=False, write_g6=True)
+
+for it in range(10):
+    start = time()
+    for n in range(7, 8):
+        exhaust_n_vertex_connected_graphs(n, plot=False, write_g6=True)
+        stop = time()
+        print("Finished batch", n, "in", stop - start, "seconds")
+        times.append(stop - start)
+print("Computed in %f ± %f seconds" % (np.mean(times), np.std(times)))

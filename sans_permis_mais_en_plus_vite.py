@@ -88,24 +88,37 @@ def exhaust_nx_smallgraphs():
             plt.show()
 
 
+def Ms_good_batch(Ms, n, num_graphs, start_status_array):
+    is_good = np.zeros(num_graphs, dtype=np.uint8)
+    for i in range(num_graphs):
+        return is_good
+
+
 # writing good graphs is very expensive; plotting graphs is resource-intensive, but also useful to infer information
 def exhaust_n_vertex_connected_graphs(n, plot=True, write_g6=False):
     i = 0
     Gs = connected_graphs_on(n)
     print("Graphs on %d vertices loaded from .graph6 file. Computing..." % n)
+    num_graphs = len(Gs)
+    Ms = np.zeros([num_graphs, n, n], dtype=np.uint8)
+    for i in range(num_graphs):
+        Ms[i] = nx.to_numpy_array(Gs[i])
+    Zs = np.zeros([num_graphs, n, n], dtype=np.uint8)
+    for i in range(num_graphs):
+        Zs[i] = nx.to_numpy_array(Gs[i])
     start_status_array = numpy_bitstrings(n)
-    for G in Gs:
-        G_good, witness = is_good_adj_matrix(nx.to_numpy_array(G), start_status_array)
+    for i in range(num_graphs):
+        G_good, witness = is_good_adj_matrix(Ms[i], start_status_array)
         if not G_good:
             folder = "C:/Users/Administrator/OneDrive - Durham University/MISMax/bad_%d/" % n
             if plot:
                 plt.title("G was bad")
                 print("G was bad")
-                nx.draw(G, with_labels=True)
+                nx.draw(Gs[i], with_labels=True)
                 plt.savefig(folder + "%d_vertex_graph_%d.png" % (n, i))
                 plt.show()
             if write_g6:
-                nx.write_graph6(G, folder + "%d_%d.g6" % (n, i))
+                nx.write_graph6(Gs[i], folder + "%d_%d.g6" % (n, i))
         i += 1
 
 

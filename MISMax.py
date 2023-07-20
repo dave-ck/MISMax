@@ -13,8 +13,7 @@ def numpy_bitstrings(n):
     return out_arr
 
 
-# memoizing the below gives only a negligible performance boost (for small n - as in our case)
-# from https://newbedev.com/generating-all-permutations-efficiently
+
 def permutations(n):
     a = np.zeros((np.math.factorial(n), n), np.uint8)
     f = 1

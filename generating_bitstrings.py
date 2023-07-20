@@ -4,7 +4,7 @@ from time import time, perf_counter
 
 
 def bitwise_iter(n, _):
-    A = np.zeros(n, dtype=np.uint8)
+    A = np.empty(n, dtype=np.uint8)
     a = 0
     for i in range(2 ** n):
         temp = i
@@ -18,7 +18,7 @@ def bitwise_iter(n, _):
 
 @njit
 def bitwise_iter_numba(n, _):
-    A = np.zeros(n, dtype=np.uint8)
+    A = np.empty(n, dtype=np.uint8)
     a = 0
     for i in range(2 ** n):
         for j in range(n - 1, -1, -1):
@@ -53,6 +53,25 @@ def generate_with_bitwise(n):
             i >>= 1
     return out_arr
 
+
+def generate_with_bitwise_toms_way(n):
+    out_arr = np.empty((2 ** n, n), dtype=np.uint8)
+    for i in range(2 ** n):
+        index_i = i
+        for j in range(n - 1, -1, -1):
+            out_arr[index_i, j] = i & 1
+            i >>= 1
+    return out_arr
+
+@njit
+def generate_with_bitwise_toms_way_numba(n):
+    out_arr = np.empty((2 ** n, n), dtype=np.uint8)
+    for i in range(2 ** n):
+        index_i = i
+        for j in range(n - 1, -1, -1):
+            out_arr[index_i, j] = i & 1
+            i >>= 1
+    return out_arr
 
 @njit
 def generate_with_bitwise_numba(n):
@@ -125,5 +144,5 @@ def test_iterators(n, reps):  # times for n=10, reps=1000 on Ryzen 7 5800H in co
         print()
 
 
-test_generators(20)
-# test_iterators(10, 1000)
+# test_generators(20)
+test_iterators(20, 1)

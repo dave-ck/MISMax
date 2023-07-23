@@ -1,4 +1,5 @@
 import itertools
+import math
 from time import time
 
 import networkx as nx
@@ -48,6 +49,15 @@ def has_permis(M, start_status_array, perms_n):
         if is_permis(M, word, start_status_array.copy(), n):
             return True
     return False
+
+
+def adj_matrix_permis_count(M, start_status_array):
+    n = len(M)
+    count = 0
+    for word in permutations(n):
+        if good_under_perm_(M, word, start_status_array.copy(), n):
+            count += 1
+    return count
 
 
 @jit(nopython=True)

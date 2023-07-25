@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="added">
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="0.796298 ± 0.024661 seconds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generating_permutations.py" beforeDir="false" afterPath="$PROJECT_DIR$/generating_permutations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" beforeDir="false" afterPath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,20 +28,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/PhD/Teaching/MISMax/geng_outputs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "C:/PhD/Teaching/MISMax/geng_outputs"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PhD\Teaching\MISMax\geng_outputs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sans_permis_mais_en_plus_vite (1)">
+  <component name="RunManager" selected="Python.parallelism_testing">
     <configuration name="generating_permutations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,10 +162,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.parallelism_testing" />
         <item itemvalue="Python.sans_permis_mais_en_plus_vite (1)" />
         <item itemvalue="Python.generating_permutations" />
         <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
-        <item itemvalue="Python.parallelism_testing" />
         <item itemvalue="Python.sans_permis" />
       </list>
     </recent_temporary>
@@ -187,7 +187,7 @@
       <workItem from="1687969160563" duration="14751000" />
       <workItem from="1688745260150" duration="18317000" />
       <workItem from="1689250139419" duration="19588000" />
-      <workItem from="1689694059090" duration="7487000" />
+      <workItem from="1689694059090" duration="14896000" />
     </task>
     <task id="LOCAL-00001" summary="pre-cull">
       <created>1686672156389</created>
@@ -273,7 +273,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689946058586</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="0.695058 ± 0.021500 seconds for g7c">
+      <created>1690288933378</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690288933378</updated>
+    </task>
+    <task id="LOCAL-00014" summary="0.738487 ± 0.024451 seconds">
+      <created>1690289078472</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1690289078472</updated>
+    </task>
+    <task id="LOCAL-00015" summary="0.796298 ± 0.024661 seconds">
+      <created>1690289400501</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690289400501</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,17 +324,20 @@
     <MESSAGE value="split graphes_sans_permis.py into sans_permis.py and sans_permis_mais_en_plus_vite.py: the former is for people ho cam from arxiv, the latter has better performance and is a work in progress." />
     <MESSAGE value="idk what I was doing but I gotta pull so I guess I'm committing" />
     <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
+    <MESSAGE value="0.695058 ± 0.021500 seconds for g7c" />
+    <MESSAGE value="0.738487 ± 0.024451 seconds" />
+    <MESSAGE value="0.796298 ± 0.024661 seconds" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.796298 ± 0.024661 seconds" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MISMax$sans_permis.coverage" NAME="sans_permis Coverage Results" MODIFIED="1689168598350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$augmented_cycle_tests.coverage" NAME="augmented_cycle_tests Coverage Results" MODIFIED="1686649169673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite__1_.coverage" NAME="sans_permis_mais_en_plus_vite (1) Coverage Results" MODIFIED="1689182482868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$generating_permutations.coverage" NAME="generating_permutations Coverage Results" MODIFIED="1689954321172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite__1_.coverage" NAME="sans_permis_mais_en_plus_vite (1) Coverage Results" MODIFIED="1690295964167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graphes_sans_permis.coverage" NAME="graphes_sans_permis Coverage Results" MODIFIED="1689168213974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$MISMax.coverage" NAME="MISMax Coverage Results" MODIFIED="1688744866995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1689264229388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite.coverage" NAME="sans_permis_mais_en_plus_vite Coverage Results" MODIFIED="1689347173586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1690296248025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graph6_testing.coverage" NAME="graph6_testing Coverage Results" MODIFIED="1689089717324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

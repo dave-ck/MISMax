@@ -102,5 +102,6 @@ def plot_divisibility(n):
 
 # Call the function with the path to your file
 # plot_histogram("permis_counts/permis_counts_graph7c.csv")
-for n in range(3, 8):
+for n in range(8,9):
     plot_count_frequency(n)
+    plot_divisibility(n)

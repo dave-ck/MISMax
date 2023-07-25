@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="0.796298 ± 0.024661 seconds">
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="ncc try">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" beforeDir="false" afterPath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parallelism_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/parallelism_testing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +187,7 @@
       <workItem from="1687969160563" duration="14751000" />
       <workItem from="1688745260150" duration="18317000" />
       <workItem from="1689250139419" duration="19588000" />
-      <workItem from="1689694059090" duration="14896000" />
+      <workItem from="1689694059090" duration="15399000" />
     </task>
     <task id="LOCAL-00001" summary="pre-cull">
       <created>1686672156389</created>
@@ -294,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690289400501</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ncc try">
+      <created>1690296498978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690296498979</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +334,8 @@
     <MESSAGE value="0.695058 ± 0.021500 seconds for g7c" />
     <MESSAGE value="0.738487 ± 0.024451 seconds" />
     <MESSAGE value="0.796298 ± 0.024661 seconds" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.796298 ± 0.024661 seconds" />
+    <MESSAGE value="ncc try" />
+    <option name="LAST_COMMIT_MESSAGE" value="ncc try" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MISMax$sans_permis.coverage" NAME="sans_permis Coverage Results" MODIFIED="1689168598350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

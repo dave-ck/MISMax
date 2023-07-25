@@ -16,6 +16,12 @@ def ye_olde_matrix(n):
     return a
 
 
+def ye_old_gen(n):
+    M = ye_olde_matrix(n)
+    for i in range(len(M)):
+        yield M[i]
+
+
 def ehrlich_gen(n):
     a = np.arange(n, dtype=np.uint8)
     b = np.arange(n, dtype=np.uint8)
@@ -64,6 +70,29 @@ def ehrlich_gen_numba(n):
             k -= 1
 
 
+def ehrlich_targets(n):
+    b = np.arange(n, dtype=np.uint8)
+    c = np.zeros(n + 1, dtype=np.uint8)  # c[0] should never be accessed; using arr of length n+1 to index starting at 1
+    target = 0
+    while True:
+        yield target
+        k = 1
+        while c[k] == k:
+            c[k] = 0
+            k += 1
+        if k == n:
+            return  # is break better?
+        c[k] += 1
+        target = b[k]
+        # reversing sublist as in textbook - swap for numpy impl. later if compatible with njit
+        j = 1
+        k = k - 1
+        while j < k:
+            b[j], b[k] = b[k], b[j]
+            j += 1
+            k -= 1
+
+
 def ehrlich_matrix(n):
     perms = np.empty((np.math.factorial(n), n), dtype=np.uint8)
     i = 0
@@ -92,21 +121,21 @@ def factorial(n):
     return out
 
 
-def test_generators(n):  # times for n=20 on Ryzen 7 5800H in comment; for smaller n numba appears as zero
-    for generate in [ye_olde_matrix,  # 0.131 ± 0.004 seconds
-                     ehrlich_matrix,  # 20.027 ± 0.648 seconds
-                     ehrlich_matrix_numba,  # 1.017 ± 0.366 seconds
-                     ]:
-        print(generate.__name__, "with n=", n)
+def test_matrix_generators(n):  # times for n=20 on Ryzen 7 5800H in comment; for smaller n numba appears as zero
+    for generate_matrix in [ye_olde_matrix,  # 0.131 ± 0.004 seconds
+                            ehrlich_matrix,  # 20.027 ± 0.648 seconds
+                            ehrlich_matrix_numba,  # 1.017 ± 0.366 seconds
+                            ]:
+        print(generate_matrix.__name__, "with n=", n)
         # Compile and warmup JIT
         for _ in range(5):
-            generate(3)
+            generate_matrix(3)
         times = []
         # Run test 10 times
         for _ in range(10):
             # Run function and measure time
             start_time = perf_counter()
-            result = generate(n)
+            result = generate_matrix(n)
             elapsed_time = perf_counter() - start_time
 
             print(f"{elapsed_time:.3f} seconds - result sum: {np.sum(result)}")
@@ -118,5 +147,13 @@ def test_generators(n):  # times for n=20 on Ryzen 7 5800H in comment; for small
         print()
 
 
-test_generators(10)
-# print(ehrlich_matrix_numba(3))
+# test_matrix_generators(10)
+
+targs = list(ehrlich_targets(11))
+prev = targs[0]
+beta = 0
+for i in range(len(targs)):
+    targ = targs[i]
+    beta = max(min(prev - targ, targ - prev), beta)
+    prev = targ
+print(beta)

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="ncc try">
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="ncc try2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parallelism_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/parallelism_testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" beforeDir="false" afterPath="$PROJECT_DIR$/sans_permis_mais_en_plus_vite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
       <recent name="C:\PhD\Teaching\MISMax\geng_outputs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.parallelism_testing">
+  <component name="RunManager" selected="Python.sans_permis_mais_en_plus_vite">
     <configuration name="generating_permutations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,9 +71,6 @@
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -109,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sans_permis_mais_en_plus_vite (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="sans_permis_mais_en_plus_vite" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,41 +130,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sans_permis_mais_en_plus_vite" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MISMax" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\PhD\Teaching\MISMax\sans_permis_mais_en_plus_vite.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.generating_permutations" />
       <item itemvalue="Python.parallelism_testing" />
       <item itemvalue="Python.sans_permis" />
       <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
-      <item itemvalue="Python.sans_permis_mais_en_plus_vite (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.parallelism_testing" />
-        <item itemvalue="Python.sans_permis_mais_en_plus_vite (1)" />
-        <item itemvalue="Python.generating_permutations" />
         <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
+        <item itemvalue="Python.parallelism_testing" />
+        <item itemvalue="Python.generating_permutations" />
         <item itemvalue="Python.sans_permis" />
       </list>
     </recent_temporary>
@@ -187,7 +162,7 @@
       <workItem from="1687969160563" duration="14751000" />
       <workItem from="1688745260150" duration="18317000" />
       <workItem from="1689250139419" duration="19588000" />
-      <workItem from="1689694059090" duration="15399000" />
+      <workItem from="1689694059090" duration="26822000" />
     </task>
     <task id="LOCAL-00001" summary="pre-cull">
       <created>1686672156389</created>
@@ -301,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690296498979</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ncc try2">
+      <created>1690296851961</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690296851961</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +317,8 @@
     <MESSAGE value="0.738487 ± 0.024451 seconds" />
     <MESSAGE value="0.796298 ± 0.024661 seconds" />
     <MESSAGE value="ncc try" />
-    <option name="LAST_COMMIT_MESSAGE" value="ncc try" />
+    <MESSAGE value="ncc try2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ncc try2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MISMax$sans_permis.coverage" NAME="sans_permis Coverage Results" MODIFIED="1689168598350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -344,8 +327,8 @@
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite__1_.coverage" NAME="sans_permis_mais_en_plus_vite (1) Coverage Results" MODIFIED="1690295964167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graphes_sans_permis.coverage" NAME="graphes_sans_permis Coverage Results" MODIFIED="1689168213974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$MISMax.coverage" NAME="MISMax Coverage Results" MODIFIED="1688744866995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite.coverage" NAME="sans_permis_mais_en_plus_vite Coverage Results" MODIFIED="1689347173586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1690296248025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1690360487418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite.coverage" NAME="sans_permis_mais_en_plus_vite Coverage Results" MODIFIED="1690389260259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graph6_testing.coverage" NAME="graph6_testing Coverage Results" MODIFIED="1689089717324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

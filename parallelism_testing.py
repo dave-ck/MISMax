@@ -1,20 +1,16 @@
-# import time
-# import numpy as np
-# from multiprocessing.pool import ThreadPool
 from os import getpid
-from multiprocessing.pool import ThreadPool
+from multiprocessing import Pool, current_process
+from numba import njit
+import numpy as np
 
 
-# from numba import njit, prange
-# import networkx as nx
-
-2
+@njit
 def hello(i):
-    print("PID", getpid())
+    # print(f"PID: {getpid()}, Process name: {current_process().name}")
     return 2 * i
 
 
 if __name__ == "__main__":
-    with ThreadPool(processes=20) as pool:
-        result = pool.map(hello, [i for i in range(10)])
+    with Pool() as pool:
+        result = pool.map(hello, np.random.random((1024, 3, 3)))
         print(result)

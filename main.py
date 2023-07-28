@@ -54,21 +54,20 @@ def test_time(func, n=7, processes=32, chunksize=256, reps=10):
           f" finds {np.mean(counts):.0f} ± {np.std(counts):.0f} permises")
 
 
-def hybrid_permis_finder(n, processes=32, chunksize=256):
+def hybrid_permis_finder(n, processes=32, chunksize=4096):
     print(f"\n--- Running hybrid permis finder with n={n}, {processes} processes, {chunksize} chunksize ---")
     with Pool(processes=processes) as pool:
         num_graphs = oeis_A001349(n)
         permis_table = np.zeros((num_graphs, n), dtype=np.uint8)
         start = perf_counter()
         graph_iterable = adj_matrix_generator(f"./geng_outputs/graph{n}c.g6")
+        print("Calling imap...")
         result = pool.imap(find_permis_whp, graph_iterable, chunksize=chunksize)
-        count = 0
+        print("Iterating over results...")
         for permis, i in zip(result, range(num_graphs)):
             permis_table[i] = permis
-            count += np.any(permis)
         stop = perf_counter()
-        print(f"Random run finished in {stop - start:.3f} seconds, {num_graphs - count} "
-              f"graphs are permisless whp; {count} permises found")
+
         # fresh graph iterable; each one runs through file once, need to reset to file start
         graph_iterable = adj_matrix_generator(f"./geng_outputs/graph{n}c.g6")
         # find which graphs have no permis with high probability (because we haven't found one yet)
@@ -76,6 +75,9 @@ def hybrid_permis_finder(n, processes=32, chunksize=256):
         whp_permisless_graphs = filter_generator(graph_iterable, whp_permisless)
         result = pool.imap(find_permis, whp_permisless_graphs, chunksize=1)  # use chunksize 1 - each task expensive
         whp_permisless_indices = np.where(whp_permisless)[0]
+        count = num_graphs - len(whp_permisless_indices)
+        print(f"Random run finished in {stop - start:.3f} seconds, {num_graphs - count} "
+              f"graphs are permisless w.h.p.; {count} permises found")
         for (permis, index) in zip(result, whp_permisless_indices):
             permis_table[index] = permis
             count += np.any(permis)
@@ -85,7 +87,5 @@ def hybrid_permis_finder(n, processes=32, chunksize=256):
               f" {num_graphs - count} graphs are permisless; {count} permises found")
 
 if __name__ == "__main__":
-    # test_time(has_permis_hybrid_BAD, n=8)
-    for n in range(3, 10):
-        hybrid_permis_finder(n)
+    hybrid_permis_finder(10)
     print("Done.")

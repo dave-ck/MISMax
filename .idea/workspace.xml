@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="started refactor">
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_g6.py" beforeDir="false" afterPath="$PROJECT_DIR$/g6_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permis.py" beforeDir="false" afterPath="$PROJECT_DIR$/permis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -40,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -50,7 +65,29 @@
       <recent name="C:\Users\Dave or David\PycharmProjects\MISMax" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sans_permis_mais_en_plus_vite (1)">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="g6_reader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MISMax" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/g6_reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="generating_permutations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,6 +110,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MISMax" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="parallelism_testing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MISMax" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,28 +146,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\Dave or David\PycharmProjects\MISMax\testing_stuff\parallelism_testing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sans_permis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MISMax" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Dave or David\PycharmProjects\MISMax\sans_permis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,17 +201,17 @@
     <list>
       <item itemvalue="Python.generating_permutations" />
       <item itemvalue="Python.parallelism_testing" />
-      <item itemvalue="Python.sans_permis" />
-      <item itemvalue="Python.sans_permis_mais_en_plus_vite (1)" />
       <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
+      <item itemvalue="Python.g6_reader" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sans_permis_mais_en_plus_vite (1)" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.g6_reader" />
         <item itemvalue="Python.parallelism_testing" />
         <item itemvalue="Python.generating_permutations" />
         <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
-        <item itemvalue="Python.sans_permis" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +233,8 @@
       <workItem from="1688745260150" duration="18317000" />
       <workItem from="1689250139419" duration="19588000" />
       <workItem from="1689694059090" duration="15399000" />
-      <workItem from="1690446413993" duration="7522000" />
+      <workItem from="1690446413993" duration="8145000" />
+      <workItem from="1690534599065" duration="4964000" />
     </task>
     <task id="LOCAL-00001" summary="pre-cull">
       <created>1686672156389</created>
@@ -317,7 +355,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690460230376</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="workspace.xml buggilly refusing to accept it's in .gitignore">
+      <created>1690481695917</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690481695917</updated>
+    </task>
+    <task id="LOCAL-00019" summary="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec">
+      <created>1690539577745</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539577745</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,20 +404,24 @@
     <MESSAGE value="0.796298 ± 0.024661 seconds" />
     <MESSAGE value="ncc try" />
     <MESSAGE value="started refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="started refactor" />
+    <MESSAGE value="workspace.xml buggilly refusing to accept it's in .gitignore" />
+    <MESSAGE value="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec" />
+    <option name="LAST_COMMIT_MESSAGE" value="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MISMax$main.coverage" NAME="main Coverage Results" MODIFIED="1690539471082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$GPT_plotting.coverage" NAME="GPT_plotting Coverage Results" MODIFIED="1690277605959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graph6_testing.coverage" NAME="graph6_testing Coverage Results" MODIFIED="1689089717324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$generating_bitstrings.coverage" NAME="generating_bitstrings Coverage Results" MODIFIED="1689848253564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$MISMax.coverage" NAME="MISMax Coverage Results" MODIFIED="1686603348893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1690356277822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite__1_.coverage" NAME="sans_permis_mais_en_plus_vite (1) Coverage Results" MODIFIED="1690447277038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$graphes_sans_permis.coverage" NAME="graphes_sans_permis Coverage Results" MODIFIED="1689168213974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$g6_reader.coverage" NAME="g6_reader Coverage Results" MODIFIED="1690535411228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$GPT_grapher.coverage" NAME="GPT_grapher Coverage Results" MODIFIED="1690278270605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$augmented_cycle_tests.coverage" NAME="augmented_cycle_tests Coverage Results" MODIFIED="1686646732721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis.coverage" NAME="sans_permis Coverage Results" MODIFIED="1690130106944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite.coverage" NAME="sans_permis_mais_en_plus_vite Coverage Results" MODIFIED="1690194424926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$graphes_sans_permis.coverage" NAME="graphes_sans_permis Coverage Results" MODIFIED="1689168213974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$generating_permutations.coverage" NAME="generating_permutations Coverage Results" MODIFIED="1689940382739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

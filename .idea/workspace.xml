@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec">
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="cleaned up, commented, killed __main__">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_g6.py" beforeDir="false" afterPath="$PROJECT_DIR$/g6_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/permis.py" beforeDir="false" afterPath="$PROJECT_DIR$/permis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,7 +233,7 @@
       <workItem from="1689250139419" duration="19588000" />
       <workItem from="1689694059090" duration="15399000" />
       <workItem from="1690446413993" duration="8145000" />
-      <workItem from="1690534599065" duration="4964000" />
+      <workItem from="1690534599065" duration="7896000" />
     </task>
     <task id="LOCAL-00001" summary="pre-cull">
       <created>1686672156389</created>
@@ -369,7 +368,35 @@
       <option name="project" value="LOCAL" />
       <updated>1690539577745</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="implemented has_permis_whp (with high probability): return 1 iff at least one randomly generated word was a permis">
+      <created>1690539634504</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539634504</updated>
+    </task>
+    <task id="LOCAL-00021" summary="pycharm being funky again">
+      <created>1690539661683</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539661683</updated>
+    </task>
+    <task id="LOCAL-00022" summary="added oeis_A001349 lookup; needed when using iterables instead of arrays">
+      <created>1690539692388</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539692388</updated>
+    </task>
+    <task id="LOCAL-00023" summary="cleaned up, commented, killed __main__">
+      <created>1690539724962</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539724962</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,10 +433,14 @@
     <MESSAGE value="started refactor" />
     <MESSAGE value="workspace.xml buggilly refusing to accept it's in .gitignore" />
     <MESSAGE value="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec" />
-    <option name="LAST_COMMIT_MESSAGE" value="run g7c in &lt;.4 sec on laptop, g8c in ~65 sec" />
+    <MESSAGE value="implemented has_permis_whp (with high probability): return 1 iff at least one randomly generated word was a permis" />
+    <MESSAGE value="pycharm being funky again" />
+    <MESSAGE value="added oeis_A001349 lookup; needed when using iterables instead of arrays" />
+    <MESSAGE value="cleaned up, commented, killed __main__" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up, commented, killed __main__" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MISMax$main.coverage" NAME="main Coverage Results" MODIFIED="1690539471082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$main.coverage" NAME="main Coverage Results" MODIFIED="1690542059080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$GPT_plotting.coverage" NAME="GPT_plotting Coverage Results" MODIFIED="1690277605959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graph6_testing.coverage" NAME="graph6_testing Coverage Results" MODIFIED="1689089717324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$generating_bitstrings.coverage" NAME="generating_bitstrings Coverage Results" MODIFIED="1689848253564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

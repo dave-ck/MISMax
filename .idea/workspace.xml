@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="cleaned up, commented, killed __main__">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permis.py" beforeDir="false" afterPath="$PROJECT_DIR$/permis.py" afterDir="false" />
+    <list default="true" id="201512b8-b810-44e8-8205-54ff45843403" name="Changes" comment="implemented is_cycle(M)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,11 +196,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.g6_reader" />
       <item itemvalue="Python.generating_permutations" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.parallelism_testing" />
       <item itemvalue="Python.sans_permis_mais_en_plus_vite" />
-      <item itemvalue="Python.g6_reader" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -440,7 +438,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="cleaned up, commented, killed __main__" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MISMax$main.coverage" NAME="main Coverage Results" MODIFIED="1690542059080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$main.coverage" NAME="main Coverage Results" MODIFIED="1690542878621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$GPT_plotting.coverage" NAME="GPT_plotting Coverage Results" MODIFIED="1690277605959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graph6_testing.coverage" NAME="graph6_testing Coverage Results" MODIFIED="1689089717324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$generating_bitstrings.coverage" NAME="generating_bitstrings Coverage Results" MODIFIED="1689848253564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -448,8 +446,9 @@
     <SUITE FILE_PATH="coverage/MISMax$parallelism_testing.coverage" NAME="parallelism_testing Coverage Results" MODIFIED="1690356277822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite__1_.coverage" NAME="sans_permis_mais_en_plus_vite (1) Coverage Results" MODIFIED="1690447277038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$graphes_sans_permis.coverage" NAME="graphes_sans_permis Coverage Results" MODIFIED="1689168213974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$torch_permis.coverage" NAME="torch_permis Coverage Results" MODIFIED="1690747362897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$g6_reader.coverage" NAME="g6_reader Coverage Results" MODIFIED="1690535411228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISMax$GPT_grapher.coverage" NAME="GPT_grapher Coverage Results" MODIFIED="1690278270605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISMax$GPT_grapher.coverage" NAME="GPT_grapher Coverage Results" MODIFIED="1692008296423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing_stuff" />
     <SUITE FILE_PATH="coverage/MISMax$augmented_cycle_tests.coverage" NAME="augmented_cycle_tests Coverage Results" MODIFIED="1686646732721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis.coverage" NAME="sans_permis Coverage Results" MODIFIED="1690130106944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISMax$sans_permis_mais_en_plus_vite.coverage" NAME="sans_permis_mais_en_plus_vite Coverage Results" MODIFIED="1690194424926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

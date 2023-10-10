@@ -20,6 +20,27 @@ def oeis_A001349(n):
     return arr[n]
 
 
+def is_cycle(M):
+    # if some vertex has degree != 2 then M cannot be a cycle
+    if np.any(M.sum(axis=0) != 2):
+        return False
+    # check cycle size by doing a walk from vertex 0 along component; if 0 is reached in <n steps then G is disconnected
+    n = M.size[0]
+    prev = None
+    current = 0
+    for _ in range(n - 1):
+        neigh1, neigh2 = np.where(M[current])[0]  # point to the two neighbors of vertex 0
+        if neigh1 == prev:
+            next_v = neigh2
+        else:
+            next_v = neigh1
+        prev = current
+        current = next_v
+        if current == 0:  # vertex 0 was reached in <= n-1 steps
+            return False
+    return True
+
+
 def nx_loader(n):
     return nx.read_graph6(f'geng_outputs/graph{n}c.g6')
 

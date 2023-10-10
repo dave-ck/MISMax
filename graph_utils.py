@@ -1,7 +1,12 @@
 import time
+
+from matplotlib import pyplot as plt
+
 from g6_reader import graph6_to_numpy_stack
 import networkx as nx
 import numpy as np
+
+from numba import njit
 
 
 def oeis_A001349(n):
@@ -20,13 +25,14 @@ def oeis_A001349(n):
     return arr[n]
 
 
+@njit
 def is_cycle(M):
     # if some vertex has degree != 2 then M cannot be a cycle
     if np.any(M.sum(axis=0) != 2):
         return False
     # check cycle size by doing a walk from vertex 0 along component; if 0 is reached in <n steps then G is disconnected
-    n = M.size[0]
-    prev = None
+    n = M.shape[0]
+    prev = -1
     current = 0
     for _ in range(n - 1):
         neigh1, neigh2 = np.where(M[current])[0]  # point to the two neighbors of vertex 0
@@ -39,6 +45,20 @@ def is_cycle(M):
         if current == 0:  # vertex 0 was reached in <= n-1 steps
             return False
     return True
+
+
+def has_induced_c_k(M, k):
+    n = M.shape[0]
+    if n < k:
+        return False
+    if n == k:
+        return is_cycle(M)
+    for del_v in range(n):
+        M_induced = np.delete(M, del_v, axis=0)
+        M_induced = np.delete(M_induced, del_v, axis=1)
+        if has_induced_c_k(M_induced, k):
+            return True
+    return False
 
 
 def nx_loader(n):
@@ -98,4 +118,12 @@ def test_g6_load(n, reps=10):
 
 
 if __name__ == '__main__':
-    test_g6_load(10, reps=3)
+    for G in nx.graph_atlas_g():  # quick lil test to make sure (induced) cycle detection works
+        M = nx.to_numpy_array(G)
+        print(f"{G} has...")
+        if not has_induced_c_k(M, 5):
+            print("No induced C_5")
+            nx.draw(G)
+            plt.show()
+        else:
+            print("An induced C_5")

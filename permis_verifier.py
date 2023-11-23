@@ -7,6 +7,7 @@ from g6_reader import graph6_to_numpy_stack
 from numba import njit
 from graph_utils import has_induced_c_k, is_cycle
 
+
 def verify_permises_for(n):
     permises = np.load(f"permis_tables/permises_for_g{n}c.npy")
     adj_matrices = graph6_to_numpy_stack(f"./geng_outputs/graph{n}c.g6")
@@ -28,41 +29,36 @@ def verify_permises(adj_matrices, permises, n):
     print("Verified all", n, "vertex graphs")
 
 
-def verify_induced_odd_holes(n):
+def verify_induced_odd_holes_and_antiholes(n):
     permises = np.load(f"permis_tables/permises_for_g{n}c.npy")
     adj_matrices = graph6_to_numpy_stack(f"./geng_outputs/graph{n}c.g6")
     count = 0
-    induced_c7_count = 0
-    induced_c5_count = 0
-    odd_hole_free_count = 0
-
     id = 0
     for adj_matrix, permis in zip(adj_matrices, permises):
-        oddhole_found = False
         if not np.any(permis):
-            if has_induced_c_k(adj_matrix, 5):
-                print(f"Graph {count} (id {id}) with no permis has an induced C_5")
-                oddhole_found = True
-                induced_c5_count += 1
+            complement_adj_matrix = np.ones_like(adj_matrix) - adj_matrix - np.eye(n, dtype=np.uint8)
+            perfect = True
+            for k in [5, 7, 9]:
+                if has_induced_c_k(complement_adj_matrix, k):
+                    print(f"Graph {count} (id {id}) with no permis has an induced anti-C_{k}")
+                    perfect = False
+                if has_induced_c_k(adj_matrix, k):
+                    print(f"Graph {count} (id {id}) with no permis has an induced C_{k}")
+                    perfect = False
 
-            if has_induced_c_k(adj_matrix, 7):
-                print(f"Graph {count} (id {id}) with no permis has an induced C_7")
-                oddhole_found = True
-                induced_c7_count += 1
-
-            if not oddhole_found and not has_induced_c_k(adj_matrix, 9):
-                print(f"Graph {count} (id {id}) with no permis is induced odd hole free")
-                odd_hole_free_count += 1
-
+            if perfect:
+                print(f"Graph {count} (id {id}) with no permis is perfect!! ------------------------------")
+                G = nx.from_numpy_array(adj_matrix)
+                nx.draw(G)
+                plt.savefig(f"./py_outputs/permisless_perfect_graphs/{n}_vertex_permisless_perfect_graph_{id}.png")
+                plt.show()
+            print()
             count += 1
         id += 1
     print(f"Total {count} permisless {n} vertex graphs.")
-    print(f"{induced_c5_count} graphs had an induced C_5, "
-          f"{induced_c7_count} graphs had an induced C_7, and"
-          f"{odd_hole_free_count} graphs had no induced odd hole.")
 
 
 if __name__ == '__main__':
     # for n in range(3, 10):
     #     verify_permises_for(n)
-    verify_induced_odd_holes(9)
+    verify_induced_odd_holes_and_antiholes(9)

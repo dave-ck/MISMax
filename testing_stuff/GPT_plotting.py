@@ -100,8 +100,63 @@ def plot_divisibility(n):
     plt.show()
 
 
+def plot_cumulative_frequency(path):
+    # Read CSV file into a pandas dataframe
+    df = pd.read_csv(path)
+
+    # Calculate cumulative frequency of 'Count'
+    cumulative_frequency = df['Count'].value_counts().sort_index().cumsum()
+
+    # Plot cumulative frequency in log-log scale
+    plt.plot(cumulative_frequency)
+    # plt.xscale('log')
+    # plt.yscale('log')
+
+    # Add red line for zero counts
+    zero_counts = cumulative_frequency[cumulative_frequency.index == 0]
+    plt.plot(zero_counts, 'r-')
+
+    # Adding labels and title
+    plt.title('Cumulative Frequency of "Count" Column')
+    plt.xlabel('Count')
+    plt.ylabel('Cumulative Frequency')
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Display the plot
+    plt.show()
+
+def plot_sorted_counts(path):
+    # Read CSV file into a pandas dataframe
+    df = pd.read_csv(path)
+
+    # Sort dataframe by 'Count'
+    df_sorted = df.sort_values(by='Count')
+
+    # Add an 'Entry Number' column representing the index of each entry after sorting
+    df_sorted['Entry Number'] = range(len(df_sorted))
+
+    # Plot 'Entry Number' against 'Count'
+    plt.plot(df_sorted['Entry Number'], df_sorted['Count'])
+    # plt.xscale('log')
+    # plt.yscale('log')
+
+    # Adding labels and title
+    plt.title('Entry Number vs Count')
+    plt.xlabel('Entry Number')
+    plt.ylabel('Count')
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Display the plot
+    plt.show()
+
 # Call the function with the path to your file
 # plot_histogram("permis_counts/permis_counts_graph7c.csv")
-for n in range(8,9):
-    plot_count_frequency(n)
-    plot_divisibility(n)
+# for n in range(8,9):
+# plot_count_frequency(n)
+# plot_divisibility(n)
+
+plot_sorted_counts("../permis_counts/permis_counts_graph8c.csv")

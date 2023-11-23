@@ -76,7 +76,7 @@ def has_permis(M: np.ndarray):
 
 
 @njit
-def has_permis_whp(M: np.ndarray, tries=500):
+def has_permis_whp(M: np.ndarray, tries=1000):
     """
     Attempts to find a permis by trying ones chosen uniformly at random.
     :param tries: how many attempts should be made - typically 10<tries<5000
